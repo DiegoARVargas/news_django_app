@@ -9,7 +9,9 @@
 </div>
 
 <div>
+    {% if article.author.pk == request.user.pk %}
     <p><a href="{% url 'article_edit' article.pk %}">Edit</a> <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
+    {% endif %}
     <p>Back to <a href="{% url 'article_list' %}">All Articles</a></p>
 </div>
 
